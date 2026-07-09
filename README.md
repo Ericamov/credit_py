@@ -1,8 +1,8 @@
-# CS50 – Credit
+# CS50 – Credit Card Validator
 
 ## Description
 
-This project revisits the _Credit_ exercise from CS50 by implementing the same credit card validator in Python instead of C.
+This project revisits the _Credit_ exercise from CS50 by implementing the same credit card validator in Python instead of C. It verifies whether a credit card number is valid and identifies its type (AMEX, MASTERCARD, or VISA).
 
 ## How it works
 
