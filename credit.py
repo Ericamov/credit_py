@@ -6,7 +6,7 @@ def main():
     # Ask for a credit card number
     number_str = input("Number: ")
 
-    # Check if number has 13 or 15 or 16 digits
+    # Check if number is valid length (13, 15, or 16 digits)
     if not re.fullmatch(r"\d{13}|\d{15}|\d{16}", number_str):
         print("INVALID")
         return
@@ -23,7 +23,7 @@ def main():
     length = len(number_str)
     first_digits = int(number_str[:2])
 
-    # Determine card type
+    # Determine card type and print result
     card_type = find_card_type(first_digits, length)
     print(card_type)
 
@@ -60,7 +60,7 @@ def is_valid_card(total):
     return total % 10 == 0
 
 
-# check card len and starting digits
+# Determine card type based on first digits and length
 def find_card_type(first_digits, length):
 
     # Print AMEX (American Express) if it has 15 digits and starts with 34 or 37
@@ -69,7 +69,7 @@ def find_card_type(first_digits, length):
     # Print VISA if it has 13 or 16 digits and starts with 4
     if length in (13, 16) and first_digits // 10 == 4:
         return "VISA"
-    # print MASTERCARD if it has 16 digits and starts with 51, 52, 53, 54 or 55
+    # Print MASTERCARD if it has 16 digits and starts with 51, 52, 53, 54 or 55
     if length == 16 and 51 <= first_digits <= 55:
         return "MASTERCARD"
     return "INVALID"
